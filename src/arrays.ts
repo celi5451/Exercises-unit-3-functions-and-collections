@@ -45,11 +45,12 @@ export function bestPaid(): Instructor {
  * The first instructor earning less than the given amount, or undefined.
  * find. Note the return type, and what the caller has to do about it.
  */
-export function firstBelow(salary: number): Instructor | undefined {
-  return instructors.reduce((least, instructor) => {
-      return instructor.salary < salary && instructor.salary > least.salary ? instructor : least;
+export function firstBelow(salary: number): Instructor | undefined {  // The return type is important here, because the caller has to check for undefined.
+  return instructors.find((instructor) => {   // find returns the first element that matches, or undefined if none do.
+      return instructor.salary < salary;    // The predicate function returns true for the first instructor with a salary less than the given amount.
     });
 }
+
 
 /**
  * A report, one line per instructor of a department, in this exact form:
