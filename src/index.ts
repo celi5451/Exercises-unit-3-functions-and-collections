@@ -19,10 +19,10 @@ console.log(bestPaid().name);             // Einstein
 const cheapest = firstBelow(50000);
 console.log(cheapest === undefined ? 'nobody' : cheapest.name);   // Mozart
 console.log(firstBelow(10000));           // undefined
-// console.log(salaryReport('Finance'));     // Wu: 90000 kr \n Singh: 80000 kr
-// console.log(averageSalary('Comp. Sci.')); // 77333.33333333333
-// console.log(averageSalary('Nursing'));    // 0
-// console.log(instructors[0].name);         // Srinivasan: the array was not reordered
+console.log(salaryReport('Finance'));     // Wu: 90000 kr \n Singh: 80000 kr
+console.log(averageSalary('Comp. Sci.')); // 77333.33333333333
+console.log(averageSalary('Nursing'));    // 0
+console.log(instructors[0].name);         // Srinivasan: the array was not reordered. it is a check that the original array was not changed.
 
 // --- Task 2: higher-order functions ---
 // console.log(sumOf(instructors, i => i.salary));   // 898000

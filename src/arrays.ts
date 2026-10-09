@@ -62,8 +62,13 @@ export function firstBelow(salary: number): Instructor | undefined {  // The ret
  * a newline. filter, map, a template literal, and join.
  */
 export function salaryReport(deptName: string): string {
-  // TODO
-  throw new Error('not implemented');
+  return instructors
+    // keep only the instructors in the given department
+    .filter((instructor) => instructor.deptName === deptName)
+    // turn each one into a line in the form "Name: 65000 kr"
+    .map((instructor) => `${instructor.name}: ${instructor.salary} kr`)
+    // join the lines with a newline between them
+    .join('\n');
 }
 
 /**
@@ -71,6 +76,14 @@ export function salaryReport(deptName: string): string {
  * Guard against dividing by zero before you divide.
  */
 export function averageSalary(deptName: string): number {
-  // TODO
-  throw new Error('not implemented');
+  const inDept = instructors.filter(    // keep only the instructors in the given department
+    (instructor) => instructor.deptName === deptName    // filter returns a new array with only the instructors in the given department
+  );
+
+  if (inDept.length === 0) {    // guard: avoid dividing by zero
+    return 0;   // if there are no instructors in the department, return 0
+  }
+
+  const total = inDept.reduce((sum, instructor) => sum + instructor.salary, 0);   // add up the salaries of the instructors in the department
+  return total / inDept.length;   // return the average salary by dividing the total by the number of instructors in the department
 }
