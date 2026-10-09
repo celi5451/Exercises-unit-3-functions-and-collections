@@ -25,11 +25,11 @@ console.log(averageSalary('Nursing'));    // 0
 console.log(instructors[0].name);         // Srinivasan: the array was not reordered. it is a check that the original array was not changed.
 
 // --- Task 2: higher-order functions ---
-// console.log(sumOf(instructors, i => i.salary));   // 898000
-// console.log(sumOf(instructors.filter(i => i.deptName === 'Physics'), i => i.salary));   // 182000
-// const inTaylor = inBuilding('Taylor');
-// console.log(departments.filter(inTaylor).map(d => d.deptName));  // [ 'Comp. Sci.', 'Elec. Eng.' ]
-// console.log([...instructors].sort(by(i => i.salary))[0].name);   // Mozart
+console.log(sumOf(instructors, i => i.salary));   // 898000
+console.log(sumOf(instructors.filter(i => i.deptName === 'Physics'), i => i.salary));   // 182000
+const inTaylor = inBuilding('Taylor');
+console.log(departments.filter(inTaylor).map(d => d.deptName));  // [ 'Comp. Sci.', 'Elec. Eng.' ]
+console.log([...instructors].sort(by(i => i.salary))[0].name);   // Mozart
 
 // --- Task 3: closures ---
 // const add = runningTotal();

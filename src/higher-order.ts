@@ -16,8 +16,7 @@ import { Department, Instructor } from './data.js';
 export function sumOf(
   items: Instructor[],
   pick: (instructor: Instructor) => number): number {
-  // TODO
-  throw new Error('not implemented');
+  return items.reduce((sum, instructor) => sum + pick(instructor), 0);
 }
 
 /**
@@ -30,8 +29,7 @@ export function sumOf(
  * though inBuilding has long since finished. That is a closure.
  */
 export function inBuilding(building: string): (department: Department) => boolean {
-  // TODO
-  throw new Error('not implemented');
+  return (department: Department) => department.building === building;
 }
 
 /**
@@ -46,6 +44,5 @@ export function inBuilding(building: string): (department: Department) => boolea
  */
 export function by(pick: (instructor: Instructor) => number):
   (a: Instructor, b: Instructor) => number {
-  // TODO
-  throw new Error('not implemented');
+  return (a: Instructor, b: Instructor) => pick(a) - pick(b);
 }
